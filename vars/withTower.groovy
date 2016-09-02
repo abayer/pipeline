@@ -1,8 +1,7 @@
-import org.apache.commons.lang.RandomStringUtils
 
 def call (host, credentials, Closure body){
     System.err.println "I'm in a call"
-    dir ("tmp/${RandomStringUtils.random(9, true, true)}") {
+    dir ("tmp/5") {
         echo "I'm in a dir"
         withCredentials([[$class: 'UsernamePasswordMultiBinding', credentialsId: "$credentials",
                           usernameVariable: 'USERNAME', passwordVariable: 'PASSWORD']]) {
